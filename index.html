@@ -16,6 +16,52 @@
   <script src="https://cdn.jsdelivr.net/npm/progressbar.js/dist/progressbar.min.js"></script>
   
   <style>
+    @media(max-width: 1320px) {
+      .main-bottom-card{
+        flex-direction: column;
+      }
+      .main-bottom-card > .card{
+        margin-bottom:10px;
+      }
+      .target-card {
+        max-width: none !important;
+      }
+
+    }
+
+    @media(max-width: 1140px) {
+      .main-top > img {
+        display: none;
+
+      }
+    }
+
+    @media(max-width: 720px) {
+      header {
+        display: none !important;
+      }
+      .wrap {
+        flex-direction: column;
+      }
+      .header-menu {
+        display: block !important;
+      }
+    }
+
+    @media(max-width: 576px) {
+      .main-bottom-title{
+        flex-direction: column;
+        align-items: flex-start !important;
+      }
+      .card-header > div{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+    }
+    
+    .target-card{
+      max-width: 750px;
+    }
     .card-header img {
       width : 80px;
       height : 80px;
@@ -37,12 +83,26 @@
       top: 0px;
       left: 0px;
     }
+
+
+    /* .main-bottom-card > .card {
+        
+		    transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		
+		.main-bottom-card > .card:hover {
+      z-index:2000;
+		    transform: scale(1.1);
+		} */
+
   </style>
 
 </head>
 <body>
   <div class="wrap px-4 py-3 d-flex">
-    <header class="card" style="min-width: 302px;">
+
+    <!-- 사이드 메뉴 -->
+    <header class="card vh-100" style="min-width: 302px;">
       <div class="card-header text-center py-5 px-4">
         <img src="1.jpg" class="rounded-circle" alt="img">
         <div class="mt-2">
@@ -139,18 +199,130 @@
       </div>
     </header>
 
+    <!-- 핸드폰사이즈 사이드 메뉴 -->
+    <div class="header-menu mb-3 fixed-top d-none" style="top:10px; left: 10px;">
+      <a class="btn btn-outline-secondary border-0" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="card" style="min-width: 302px;">
+          <div class="card-header text-center py-5 px-4">
+            <img src="1.jpg" class="rounded-circle" alt="img">
+            <div class="mt-2">
+              <h3 class="fw-bold">Lee Seung Hwan</h3>
+              <p class="m-0 small">꾸준히 성장하는 개발자</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p class="fw-bold">경력</p>
+              <p class="text-secondary">2년 7개월</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="fw-bold">교육</p>
+              <p class="text-secondary">빅데이터 플랫폼 개발자</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="fw-bold">교육</p>
+              <p class="text-secondary">더 조은 컴퓨터 아카데미(구로)</p>
+            </div>
+    
+            <hr>
+            <div class="position-relative d-flex al">
+              <div class="text-center">
+                <div class="container-circle"></div>
+                <p>BackEnd</p>
+              </div>
+              <div class="text-center">
+                <div class="container-circle"></div>
+                <p>FrontEnd</p>
+              </div>
+              <div class="text-center">
+                <div class="container-circle"></div>
+                <p>DataBase</p>
+              </div>
+            </div>
+            
+            <hr>
+            <div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">Java ( Spring )</p>
+                  <p class="m-0 text-secondary small">70%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">PHP ( CodeIgniter )</p>
+                  <p class="m-0 text-secondary small">80%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">Python ( Flask )</p>
+                  <p class="m-0 text-secondary small">40%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">JavaScript & jQuery</p>
+                  <p class="m-0 text-secondary small">60%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="mb-3 text-end">
+                <div class="mb-1 d-flex justify-content-between">
+                  <p class="m-0 text-secondary small">MySQL & PostgreSQL</p>
+                  <p class="m-0 text-secondary small">70%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="card-footer p-3 d-flex justify-content-around ">
+            <a href="tel:010-9105-0889" class="text-light"><i class="fa-solid fa-phone fa-lg"></i></a>
+            <div class="vr"></div>
+            <a href="https://github.com/seunghwan94" class="text-light"><i class="fa-brands fa-github fa-xl"></i></a>
+            <div class="vr"></div>
+            <a href="mailto:seunghwan94.dev@gmail.com" class="text-light"><i class="fa-solid fa-square-envelope fa-xl"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- 메인 -->
     <main class="w-100">
+      <!-- 메인 header -->
       <div class="main-top position-relative">
         <div class="back-ground opacity-25"></div>
         <div class="back-ground mt-4 ms-3 position-absolute  bottom-0 end-0"></div>
         <div class="d-flex flex-column position-absolute top-50 start-0 translate-middle-y ps-5">
-          <h1 class="fw-bold text-light">Discover my Amazing<br/>Art Space!</h1>
+          <h1 class="fw-bold text-light">책임감을 가지고 주체적으로 일하는<br/>개발자 이승환입니다</h1>
           <p class="fs-5 fw-bold m-0 text-light">&lt;<span class="text-danger">code</span>&gt; 최선을 다 한다 &lt;<span class="text-danger">/code</span>&gt;</p>
         </div>
-        <img src="3.png" class="w-25 position-absolute top-50 end-0 translate-middle-y" style="bottom: 0; right: 0;">
+        <img src="3.png" class="position-absolute top-50 translate-middle-y" style="bottom: 0; right: -16px; width: 275px;">
       </div>
-      <div class="ms-3 main-middle d-flex justify-content-around my-5 pt-5">
+      <!-- 메인 middle -->
+      <div class="ms-3 main-middle d-flex justify-content-around flex-wrap my-5 pt-5">
         <div class="d-flex align-items-center">
           <p class="fw-bold text-danger">6 개월</p>
           <p class="ms-2">빅데이터 플랫폼 개발자(교육)</p>
@@ -168,47 +340,233 @@
           <p class="ms-2">더조은아카데미(구로)</p>
         </div>
       </div>
+      <!-- 메인 bottom -->
       <div class="main-bottom ms-3">
-        <h5 class="fw-bold mb-4">(주)메이크봇 (2023.3 ~ 2024.06) [1년3개월]</h5>
-        <div class="d-flex">
+        <!-- 메인 bottom -1 -->
+        <div class="d-flex align-items-end mb-4 main-bottom-title">
+          <p class="fw-bold fs-5 m-0 me-1">(주)메이크봇</p>
+          <p class="text-secondary m-0">(2023.3 ~ 2024.06) [1년3개월]</p>
+        </div>
+
+        <div class="d-flex justify-content-between main-bottom-card">
           <div class="card mx-2">
             <div class="card-header">
-              대한항공 (2023.5~2024.6) [1년 1개월]
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">대한항공</p>
+                <p class="text-secondary m-0 small">(2023.5 ~ 2024.6) [1년 1개월]</p>
+              </div>
             </div>
             <div class="card-body">
-              - 사용한 기술 스택<br/>
-              &emsp;PHP, PostgreSQL, JavaScript, Linux, Node.js<br/>
-              - 세부 내용<br/>
-              &emsp;- iOS 백그라운드 이동 시 끊기는 현상 해결<br/>
-              &emsp;&emsp;→ 시스템 안정성 향상<br/>
-              &emsp;- DB 속도 개선<br/>
-              &emsp;&emsp;→ log데이터 쿼리 수정으로 (4~5분 → 1분) **75%** 응답시간 감소<br/>
+              <h5 class="text-danger fw-bold">유지보수</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                PHP, PostgreSQL, JavaScript, Linux, Node.js<br/><br/>
+                </div>
+                세부 내용
+                <div class="ps-3">
+                  - iOS 백그라운드 이동 시 끊기는 현상 해결<br/>
+                  &emsp;→ 시스템 안정성 향상<br/>
+                  - DB 속도 개선<br/>
+                  &emsp;→ log데이터 쿼리 수정으로 (4~5분 → 1분) <span class="text-danger">75%</span> 응답시간 감소<br/>
+                </div>
+              </div>
             </div>
           </div>
           <div class="card mx-2">
             <div class="card-header">
-              생활화학제품 중독 응급 대응 시스템 개발 (환경부) (2023.12~2024.3) [4개월]
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">환경부</p>
+                <p class="text-secondary m-0 small">(2023.12 ~ 2024.3) [4개월]</p>
+              </div>
             </div>
             <div class="card-body">
-              - 사용한 기술 스택<br/>
-              &emsp;PHP (CodeIgniter), MySQL, Apache, GitLab, JavaScript<br/>
-              - 세부 내용<br/>
-              &emsp;- 시스템 환경 구축<br/>
-              &emsp;&emsp;→ 서버 및 필요한 소프트웨어 설치 및 설정 완료<br/>
-              &emsp;- 관리자 페이지 & Front 구축<br/>
-              &emsp;&emsp;→ 사용자 니즈에 맞는 인터페이스 설계로 관리자 작업 효율 향상
+              <h5 class="text-danger fw-bold">생활화학제품 중독 응급 대응 시스템 개발</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  PHP(CodeIgniter), MySQL, Apache, GitLab, JavaScript<br/><br/>
+                </div>
+                세부 내용
+                <div class="ps-3">
+                  - 시스템 환경 구축<br/>
+                  &emsp;→ 서버 및 필요한 소프트웨어 설치 및 설정 완료<br/>
+                  - 관리자 페이지 & Front 구축<br/>
+                  &emsp;→ 사용자 니즈에 맞는 인터페이스 설계로 관리자 작업 효율 향상<br/>
+                </div>
+              </div>
             </div>
           </div>
           <div class="card mx-2">
             <div class="card-header">
-              풀무원 (2023.3~2023.5) [2개월]
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">풀무원</p>
+                <p class="text-secondary m-0 small">(2023.3 ~ 2023.5) [2개월]</p>
+              </div>
             </div>
             <div class="card-body">
-              - 사용한 기술 스택<br/>
-              &emsp;PHP, PostgreSQL, JavaScript, Linux, HTML, CSS<br/>
-              - 세부 내용<br/>
-              &emsp;- 동시 주문 시 번호 중복 발행 해결<br/>
-              &emsp;&emsp;→ 주문 오류 감소로 고객 만족도 **10%** 증가<br/>
+              <h5 class="text-danger fw-bold">유지보수</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  PHP, PostgreSQL, JavaScript, Linux, HTML, CSS<br/><br/>
+                </div>  
+                세부 내용
+                <div class="ps-3">
+                  - 동시 주문 시 번호 중복 발행 해결<br/>
+                  &emsp;→ 주문 오류 감소로 고객 만족도 <span class="text-danger">10%</span> 증가<br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 메인 bottom -2 -->
+        <div class="d-flex align-items-end my-4 main-bottom-title">
+          <p class="fw-bold fs-5 m-0 me-1">(주)웨인테크놀로지</p>
+          <p class="text-secondary m-0">(2021.12 ~ 2023.03) [1년 4개월]</p>
+        </div>
+        <div class="d-flex justify-content-start main-bottom-card">
+          <div class="card mx-2">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">키움YES저축은행</p>
+                <p class="text-secondary m-0 small">(2022.10 ~ 2023.3) [6개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="text-danger fw-bold">유지보수</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  PHP, Tibero, JavaScript, ,Linux, HTML, CSS<br/><br/>
+                </div>
+                세부 내용
+                <div class="ps-3">
+                  - 금융감독위원회(신용) / 카히스토리(교통사고조회) / MY홈택스 API 연동<br/>
+                  &emsp;→ API 연동으로 대출 고객 접속자 수 <span class="text-danger">5%</span> 증가<br/>
+                  - 1원송금 인증 페이지 추가 ( 다우기술 협업 )<br/>
+                  &emsp;→  1원송금 인증으로 고객만족도 증가<br/>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mx-2">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">진영자산관리대부, 삼호저축은행</p>
+                <p class="text-secondary m-0 small">(2021.12 ~ 2022.10) [10개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="text-danger fw-bold">생활화학제품 중독 응급 대응 시스템 개발</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  PHP, PostgreSQL, JavaScript, Linux, HTML, CSS<br/><br/>
+                </div>
+                세부 내용
+                <div class="ps-3">
+                  - 메인 브라우저 변경 (El => Edge 및 Chorme)<br/>
+                  &emsp;→ EI 종료 전 모든 페이지 오류 수정하여 신뢰도 향상<br/>
+                  - API (커뮤니케이션 툴) 연동<br/>
+                  &emsp;→ 고객 문의 사항 발생 시 바로 확인할 수 있어, 고객만족도 <span class="text-danger">80%</span> 증가<br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 메인 bottom -3 -->
+        <div class="d-flex align-items-end my-4 main-bottom-title">
+          <p class="fw-bold fs-5 m-0 me-1">Project</p>
+        </div>
+        <div class="d-flex justify-content-start main-bottom-card">
+          <div class="card mx-2 target-card">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">The-k (Team project)</p>
+                <p class="text-secondary m-0 small">(2024.10.29 ~ 2024.11.29) [1개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="text-end mb-2">
+                <a href="https://github.com/seunghwan94/semi-theK" class="text-secondary text-decoration-none">github 바로가기</a> 
+                <span class="text-secondary"> | </span>
+                <a href="http://mplace.site:8080/k" class="text-secondary text-decoration-none">사이트 바로가기</a>
+              </div>
+              <h5 class="text-danger fw-bold">K-컬쳐 관광객 커뮤니티(정보) 플랫폼 개발 프로젝트</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  Java, JSP, Servlet, MariaDB, MyBatis, AWS, Tomcat<br/><br/>
+                </div>
+                프로젝트 목표
+                <div class="ps-3">
+                  - 정보 공유를 위해 사용자들이 참여하고 소통할 수 있는 사이트를 개설<br/>
+                </div><br/>
+                프로젝트 계획
+                <div class="ps-3">
+                  <img src="5.png" class="w-100" alt="semi-project-img">
+                </div><br/>
+                맡은 역할
+                <div class="ps-3">
+                  - 서버 환경 구축, 갤러리 게시판, 관리자 페이지<br/>
+                  &emsp;→ <span class="text-danger">CRUD</span> 기능 <br/>
+                  &emsp;→ 갤러리 게시판 <span class="text-danger">like</span> & <span class="text-danger">view count</span> <br/>
+                  &emsp;→ 관리자 페이지 <span class="text-danger">통계 DB 설계</span> <br/>
+                  &emsp;→ Chat.js 사용하여 <span class="text-danger">데이터 시각화</span> <br/>
+                </div><br/>
+                결과
+                <div class="ps-3">
+                  <img src="6.png" class="w-100" alt="chatGPT-project-img">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mx-2 ">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">자동 블로그 포스팅 </p>
+                <p class="text-secondary m-0 small">(2023.08.01 ~ 2023.11.16) [3개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="text-end mb-2">
+                <a href="https://github.com/seunghwan94/python-auto_blog_postting" class="text-secondary text-decoration-none">github 바로가기</a> 
+                <span class="text-secondary"> | </span>
+                <a href="https://healthcare77.tistory.com/" class="text-secondary text-decoration-none">블로그 바로가기</a>
+              </div>
+              <h5 class="text-danger fw-bold">ChatGPT를 이용한 자동 블로그 포스팅 프로그램</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  Python (selenium), API 연동(ChatGPT, Tistory, unsplash)<br/><br/>
+                </div>
+                프로젝트 목표
+                <div class="ps-3">
+                  - ChatGPT의 발전에 빠르게 대응하기 위해 관련 기술을 활용하여 블로그 포스팅 자동화 프로그램을 개발<br/>
+                </div><br/>
+                프로젝트 계획
+                <div class="ps-3">
+                  - API 키 및 블로그 기본 설정을 텍스트 파일로 저장<br/>
+                  - main.py 실행 시 저장된 정보를 사용하여 GPT 기반 블로그 게시글을 작성<br/>
+                  - 게시글 작성 완료 후 이미지를 첨부하여 티스토리에 게시글을 게시<br/>
+                  - 게시 성공 여부를 Slack으로 전달<br/>
+                  - BIOS 설정을 통해 컴퓨터가 특정 시간에 자동으로 켜지도록 설정<br/>
+                  - 작업 스케줄러를 사용하여 main.py를 실행하고, 실행 완료 시간에 컴퓨터가 자동으로 꺼지도록 설정<br/>
+                  - API 연동<br/>
+                  &emsp;- ChatGPT : GPTs를 통해 커스텀 하여 블로그 게시글 작성<br/>
+                  &emsp;- Tistory : 게시글 작성되면 올라가는 블로그 사이트<br/>
+                  &emsp;- Unsplash : 주제에 맞는 이미지 저장하여 게시글에 첨부<br/>
+                  &emsp;- Google 스프레드시트 연동 : 허용된 아이디만 프로그램을 사용 가능<br/>
+                  &emsp;- Slack : 게시글 작성 성공/실패 시 슬랙으로 전달<br/>
+                </div><br/>
+                결과
+                <div class="ps-3">
+                  → 블로그 하루 평균 방문자 수 <span class="text-danger">100명</span> 증가<br/>
+                  → 애드센스(광고) <span class="text-danger">승인</span> <br/>
+                  <img src="4.png" class="w-100" alt="chatGPT-project-img">
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -218,7 +576,7 @@
   </div>
   <script>
     const containers = $('.container-circle');
-    const progressValues = [0.8, 0.6, 0.7];
+    const progressValues = [0.8, 0.6, 0.7, 0.8, 0.6, 0.7];
     const containerData =  {
       color: '#6c757d',
       trailColor: '#eee',
