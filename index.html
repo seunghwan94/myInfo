@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Lee SeungHwan</title>
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -85,18 +85,6 @@
       top: 0px;
       left: 0px;
     }
-
-
-    /* .main-bottom-card > .card {
-        
-		    transition: transform 0.3s ease, box-shadow 0.3s ease;
-		}
-		
-		.main-bottom-card > .card:hover {
-      z-index:2000;
-		    transform: scale(1.1);
-		} */
-
   </style>
 
 </head>
@@ -481,7 +469,67 @@
         <div class="d-flex align-items-end my-4 main-bottom-title">
           <p class="fw-bold fs-5 m-0 me-1">Project</p>
         </div>
+
+
         <div class="d-flex justify-content-start main-bottom-card">
+          <div class="card mx-2 target-card">
+            <div class="card-header">
+              <div class="d-flex align-items-end justify-content-between">
+                <p class="fw-bold m-0 me-1">가구의집 (House of Furniture)</p>
+                <p class="text-secondary m-0 small">(2025.01.31 ~ 2025.03.06) [1개월]</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="text-end mb-2">
+                <a href="https://github.com/seunghwan94" class="text-secondary text-decoration-none">github</a> <span class="text-secondary">[</span>
+                <a href="https://github.com/seunghwan94/hof-back" class="text-secondary text-decoration-none"> Back </a><span class="text-secondary">/</span>
+                <a href="https://github.com/seunghwan94/hof-front" class="text-secondary text-decoration-none"> Front </a><span class="text-secondary">]</span>
+                <span class="text-secondary"> | </span>
+                <a href="https://hof.lshwan.com" class="text-secondary text-decoration-none">사이트 바로가기</a>
+              </div>
+              <h5 class="text-danger fw-bold">인테리어 소품 판매, 커뮤니티 시공업체 연결 서비스가 <br/>결합된 플랫폼 개발 프로젝트</h5>
+              <div class="p-2">
+                사용한 기술 스택<br/>
+                <div class="ps-3">
+                  <span class="text-danger">CI/CD</span> [ AWS(EC2, RDS, S3), Github (GitHub Actions), Docker, Discord ], Prometheus / Grafana,
+                  <span class="text-danger">Java(Spring boot 3.4.2V)</span>, Security, MariaDB, MongoDB, <span class="text-danger">JPA</span>, MyBatis, Swagger, Jacoco,  Crawling(Selenium),
+                  <span class="text-danger">React</span>, Bootstrap, Android Studio <br/><br/>
+                </div>
+                프로젝트 목표
+                <div class="ps-3">
+                  - 1인 가구를 위한 원룸 인테리어 커뮤니티 사이트를 개발하는 것을 목표<br/>
+                </div><br/>
+                프로젝트 계획
+                <div class="ps-3">
+                  <a href="https://hof-bucket.s3.ap-northeast-2.amazonaws.com/assets/%EC%A0%95%EC%9D%98%EC%84%9C.xlsx" download="정의서.xlsx" target="_blank" rel="noopener noreferrer"> 정의서</a> /
+                  <a href="https://hof-bucket.s3.ap-northeast-2.amazonaws.com/assets/WBS.xlsx" download="WBS.xlsx" target="_blank" rel="noopener noreferrer"> WBS</a> /
+                  <a href="https://hof-bucket.s3.ap-northeast-2.amazonaws.com/assets/ERD.xlsx" download="ERD.xlsx" target="_blank" rel="noopener noreferrer"> ERD</a> /
+                  <a href="https://youtu.be/X1xhnW_Am7w" target="_blank" rel="noopener noreferrer"> Prototype</a>
+                </div><br/>
+                맡은 역할
+                <div class="ps-3">
+                  - DevOps구축 (<span class="text-danger">CI/CD</span>)<br/>
+                  &emsp;→ AWS(EC2, S3, RDS), GitHub Actions, Docker, Discord<br/>
+                  - Backend 설계 → <span class="text-danger">JPA</span>, MyBatis, Swagger, Jacoco<br/>
+                  - 모니터링 서비스 구축 → <span class="text-danger">Prometheus / Grafana </span><br/>
+                  - Data Crawling(쿠팡) → 이미지, 세부설명, 옵션, 가격 등 (Selenium 사용)<br/>
+                  - 메인 화면 전체적인 기능<br/>
+                  &emsp;→ 상품 <span class="text-danger">결제 / 환불</span> <br/>
+                  &emsp;→ <span class="text-danger">장바구니 / 찜</span> 기능<br/>
+                  &emsp;→ 상품 및 커뮤니티 <span class="text-danger">댓글 / 대댓글</span><br/>
+                  &emsp;→ 검색 및 페이징<br/>
+                  &emsp;→ 반응형 Web/App<br/>
+                </div><br/>
+                결과
+                <div class="ps-3">
+                  <a href="https://hof.lshwan.com" class="text-decoration-none pb-2">사이트 바로가기 (https://hof.lshwan.com)</a>
+                  <img src="img/hof_result.png" class="w-100" alt="hof-project-img">
+                  <img src="img/hof_result2.png" class="w-100" alt="hof-project-img">
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="card mx-2 target-card">
             <div class="card-header">
               <div class="d-flex align-items-end justify-content-between">
@@ -492,8 +540,6 @@
             <div class="card-body">
               <div class="text-end mb-2">
                 <a href="https://github.com/seunghwan94/semi-theK" class="text-secondary text-decoration-none">github 바로가기</a> 
-                <span class="text-secondary"> | </span>
-                <a href="http://k.mplace.site" class="text-secondary text-decoration-none">사이트 바로가기</a>
               </div>
               <h5 class="text-danger fw-bold">K-컬쳐 관광객 커뮤니티(정보) 플랫폼 개발 프로젝트</h5>
               <div class="p-2">
@@ -519,12 +565,13 @@
                 </div><br/>
                 결과
                 <div class="ps-3">
+                  <a href="img/the-k.pptx" class="text-decoration-none">the-k ppt 다운로드</a> 
                   <img src="img/theK.png" class="w-100" alt="chatGPT-project-img">
                 </div>
               </div>
             </div>
           </div>
-          <div class="card mx-2 ">
+          <!-- <div class="card mx-2 ">
             <div class="card-header">
               <div class="d-flex align-items-end justify-content-between">
                 <p class="fw-bold m-0 me-1">자동 블로그 포스팅 </p>
@@ -570,7 +617,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </main>
